@@ -55,6 +55,14 @@ tabLinks.forEach((tab, index) => {
     tab.addEventListener("click", (event) =>{
         // prevents default link behavior
         event.preventDefault();
-    }
-    )
-})
+
+        // removes active class from all tabs
+        tabLinks.forEach((link) => link.classList.remove("active"));
+        tabContents.forEach((content) => (content.style.display = "none"));
+
+        // adds active class to the clicked tab
+        tab.classList.add("active");
+        tabContents[index].style.display = "block";
+
+    });
+});
