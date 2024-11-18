@@ -33,7 +33,7 @@ document.addEventListener("keydown", (event) => {
 
     // prevents the default behavior of arrow keys 
     if (event.key == "ArrowUp" || event.key == "ArrowDown") {
-        event.preventDefault
+        event.preventDefault();
     }
 });
 
