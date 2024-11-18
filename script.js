@@ -12,6 +12,13 @@
 // Hint: Make sure you quote the emoji characters. They are strings, after all.
 // Hint: document.getElementById("balloon") will get the balloon element on the page.
 
+// selects the ballon element
+const ballon = document.getElementById("ballon");
+
+// set initial font size
+let currentSize = 20;
+ballon.style.fontSize = `${currentSize}px`;
+
 
 // 2. The index.html page has a tabbed layout. Make the default state of the layout show
 // the first tab, and make it so that when you click the links at the top the correct
