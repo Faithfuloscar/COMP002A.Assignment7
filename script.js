@@ -17,7 +17,21 @@ const ballon = document.getElementById("ballon");
 
 // set initial font size
 let currentSize = 20;
-ballon.style.fontSize = `${currentSize}px`;
+ballon.style.fontSize = `${currentSize}px`; // creates a string that combines the currentsize value with px unit.
+
+// event listener for key presses
+document.addEventListener("keydown", (event) => {
+    if (event.key == "ArrowUp") {
+        // inflates the balloon by increasing font size by 10%
+        currentSize *= 1.1;
+        ballon.style.fontSize = `${currentSize}px`;
+    } else if (event.key == "ArrowDown") {
+        // deflates the balloon by decreasing font size by 10%
+        currentSize *= 0.9;
+        ballon.style.fontSize = `${currentSize}px`
+    }
+}
+)
 
 
 // 2. The index.html page has a tabbed layout. Make the default state of the layout show
