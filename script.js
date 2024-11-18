@@ -30,8 +30,12 @@ document.addEventListener("keydown", (event) => {
         currentSize *= 0.9;
         ballon.style.fontSize = `${currentSize}px`
     }
-}
-)
+
+    // prevents the default behavior of arrow keys 
+    if (event.key == "ArrowUp" || event.key == "ArrowDown") {
+        event.preventDefault
+    }
+});
 
 
 // 2. The index.html page has a tabbed layout. Make the default state of the layout show
