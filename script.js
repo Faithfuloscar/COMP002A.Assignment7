@@ -17,7 +17,7 @@ const balloon = document.getElementById("balloon");
 
 // set initial font size
 let currentSize = 20;
-balloon.style.fontSize = `${currentSize}px`; // creates a string that combines the currentsize value with px unit.
+balloon.style.fontSize = `${currentSize}px`; // creates a string that combines the 'current-size' value with px unit.
 
 // event listener for key presses
 document.addEventListener("keydown", (event) => {
