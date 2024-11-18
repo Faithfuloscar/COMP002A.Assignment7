@@ -46,27 +46,29 @@ document.addEventListener("keydown", (event) => {
 // to at minimum add listeners to each link and toggle the display of the tab contents.
 // Hint: display: none; hides an element, and display: block; will bring it
 
+'use strict'
 // selects all tab links and content elements
-const tabLinks = document.querySelectorAll("#tabbed-layout ul li a");
-const tabContents = document.querySelectorAll("#tabbed-contents > div");
+const tabLinks = document.querySelectorAll('#tabbed-layout ul li a');
+const tabContents = document.querySelectorAll('#tabbed-contents > div');
 
-// adds event listeners to each tab link
-tabLinks.forEach((tab, index) => {
-    tab.addEventListener("click", (event) =>{
-        // prevents default link behavior
-        event.preventDefault();
+function activateTab(event) {
+    event.preventDefault(); // prevents default link behavior
 
-        // removes active class from all tabs
-        tabLinks.forEach((link) => link.classList.remove("active"));
-        tabContents.forEach((content) => (content.style.display = "none"));
 
-        // adds active class to the clicked tab
-        tab.classList.add("active");
-        tabContents[index].style.display = "block";
+    // removes 'active' class from all tabs
+    tabLinks.forEach(link => link.parentElement.classList.remove('active'));
+    tabContents.forEach(content => (content.style.display = 'none'));
 
-    });
-});
+    // adds 'active' class from all tabs
+    const clickedTab = event.target;
+    clickedTab.parentElement.classlist.add('active');
+    const tabId = clickedTab.id.replace('Link', ''); 
+    document.getElementById(tabId).style.display = 'block';
+}
+
+// attaches event listeners to all tab links
+tabLinks.forEach(link => link.addEventListener('click', activateTab));
 
 // sets the default state
-tabLinks[0].classList.add("active");
-tabContents[0].style.display = "block";
+document.getElementById('tab1Link').parentElement.classList.add('active');
+document.getElementById('tab1').style.display = 'block';
