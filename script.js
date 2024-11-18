@@ -66,3 +66,7 @@ tabLinks.forEach((tab, index) => {
 
     });
 });
+
+// sets the default state
+tabLinks[0].classList.add("active");
+tabContents[0].style.display = "block";
